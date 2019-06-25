@@ -14,6 +14,9 @@
 		35D094EE1FA1A73D005C5BC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35D094EC1FA1A73D005C5BC5 /* LaunchScreen.storyboard */; };
 		35D095031FA1ABA8005C5BC5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D095021FA1ABA8005C5BC5 /* MainController.swift */; };
 		35D095051FA1ABCE005C5BC5 /* PurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D095041FA1ABCE005C5BC5 /* PurchaseController.swift */; };
+		AB28A62722C12C3600FF142F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB28A62622C12C3600FF142F /* StoreKit.framework */; };
+		AB28A62922C1391F00FF142F /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A62822C1391F00FF142F /* IAPProducts.swift */; };
+		AB28A62C22C13A6700FF142F /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28A62B22C13A6700FF142F /* IAPManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		35D094EF1FA1A73D005C5BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35D095021FA1ABA8005C5BC5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		35D095041FA1ABCE005C5BC5 /* PurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseController.swift; sourceTree = "<group>"; };
+		AB28A62622C12C3600FF142F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AB28A62822C1391F00FF142F /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
+		AB28A62B22C13A6700FF142F /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB28A62722C12C3600FF142F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +77,7 @@
 		35D094F51FA1AA70005C5BC5 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				AB28A62A22C139E700FF142F /* Manager */,
 				35D094F71FA1AA7B005C5BC5 /* Model */,
 				35D094F81FA1AA83005C5BC5 /* View */,
 				35D094F61FA1AA76005C5BC5 /* Controller */,
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				3534CE801FA1B45400E591BC /* CellIdentifiers.swift */,
+				AB28A62822C1391F00FF142F /* IAPProducts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,9 +184,18 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		AB28A62A22C139E700FF142F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB28A62B22C13A6700FF142F /* IAPManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		C9059C0E1FA640DF00FB10CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB28A62622C12C3600FF142F /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,15 +227,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ivan Akulov";
 				TargetAttributes = {
 					35D094DF1FA1A73D005C5BC5 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -259,10 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB28A62C22C13A6700FF142F /* IAPManager.swift in Sources */,
 				35D095031FA1ABA8005C5BC5 /* MainController.swift in Sources */,
 				35D095051FA1ABCE005C5BC5 /* PurchaseController.swift in Sources */,
 				3534CE811FA1B45400E591BC /* CellIdentifiers.swift in Sources */,
 				35D094E41FA1A73D005C5BC5 /* AppDelegate.swift in Sources */,
+				AB28A62922C1391F00FF142F /* IAPProducts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +323,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -309,6 +331,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -359,6 +382,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -366,6 +390,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -400,13 +425,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H969S6YFE;
+				DEVELOPMENT_TEAM = N52WYVQTKK;
 				INFOPLIST_FILE = "$(SRCROOT)/IAPDemoProjectCourse/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.IAPDemoProjectCourse;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.shapkindev.IAPDemoProjectCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -416,13 +441,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5H969S6YFE;
+				DEVELOPMENT_TEAM = N52WYVQTKK;
 				INFOPLIST_FILE = "$(SRCROOT)/IAPDemoProjectCourse/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.IAPDemoProjectCourse;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.shapkindev.IAPDemoProjectCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
